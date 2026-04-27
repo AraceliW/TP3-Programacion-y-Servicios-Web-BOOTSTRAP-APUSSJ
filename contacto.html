@@ -14,63 +14,78 @@
 
 <body>
   <header>
-    <nav>
-      <div class="wrapper">
-        <div class="logo">
-          <a href="index.html">
-            <img id="logo-jujuy" src="img/logo-jujuy-turismo.png" alt="Logo Jujuy Turismo">
-          </a>
-        </div>
-        <input type="radio" name="slide" id="menu_btn" />
-        <input type="radio" name="slide" id="cancel_btn" />
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm navbar-jujuy">
+      <div class="container container-jujuy">
 
-        <ul class="nav_links">
-          <label for="cancel_btn" class="btn cancel_btn">
-            <i class="fas fa-times"></i>
-          </label>
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img id="logo-jujuy" src="img/logo-jujuy-turismo.png" alt="Logo Jujuy Turismo" class="navbar-jujuy-logo">
+        </a>
 
-          <li>
-            <a href="destinos.html" class="desktop_item">DESTINOS</a>
-            <input type="checkbox" id="showMega" />
-            <label for="showMega" class="mobile_item">DESTINOS</label>
-            <div class="mega_box">
-              <div class="content">
-                <div class="row img_row">
-                  <div class="services_img"></div>
-                </div>
-                <div class="row">
-                  <ul class="mega_links first_links">
-                    <li><a href="destinos.html#id-section-card">Pumamarca</a></li>
-                    <li><a href="destinos.html#id-section-card">Salinas Grandes</a></li>
-                    <li><a href="destinos.html#id-section-card">Humahuaca</a></li>
-                  </ul>
-                </div>
-                <div class="row">
-                  <ul class="mega_links">
-                    <li><a href="destinos.html#id-section-table">Precios por Lugar</a></li>
-                    <li><a href="destinos.html#id-galeria">Galeria</a></li>
-                  </ul>
-                </div>
-                <div class="row">
-                  <ul class="mega_links">
-                    <li><a href="blog.html">Blog</a></li>
-                  </ul>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion"
+          aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+          <ul class="navbar-nav align-items-lg-center gap-2 gap-lg-3 py-3 py-lg-0">
+
+            <li class="nav-item dropdown position-lg-static">
+              <a class="nav-link dropdown-toggle fw-bold nav-link-jujuy" href="#" id="destinosDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                DESTINOS
+              </a>
+
+              <div class="dropdown-menu w-100 mt-0 border-0 shadow pt-3 pb-4 px-4 dropdown-mega-jujuy"
+                aria-labelledby="destinosDropdown">
+                <div class="container">
+                  <div class="row g-4">
+                    <div class="col-lg-3 d-none d-lg-block">
+                      <div class="rounded w-100 img-mega-menu"></div>
+                    </div>
+                    <div class="col-lg-3">
+                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                        <li><a class="text-decoration-none link-mega" href="destinos.html">Nuestros Destinos</a></li>
+                        <li><a class="text-decoration-none link-mega" href="educacion.html">Simulación de Phishing</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-3">
+                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                        <li><a class="text-decoration-none link-mega" href="destinos.html#id-section-table">Precios por
+                            Lugar</a></li>
+                        <li><a class="text-decoration-none link-mega" href="destinos.html#id-galeria">Galería</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-3">
+                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                        <li><a class="text-decoration-none link-mega" href="blog.html">Blog</a></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
+            </li>
 
-          <li><a href="agencias.html">AGENCIAS</a></li>
-          <li><a href="precios.html">PRECIOS</a></li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold nav-link-jujuy" href="agencias.html">AGENCIAS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold nav-link-jujuy" href="precios.html">PRECIOS</a>
+            </li>
 
-          <li><a href="contacto.html" class="btn-reserva">CONTACTO</a></li>
-          <li><button id="zenfit-toggle-mode" aria-label="Cambiar modo" class="zenfit-modo-btn">
-              ☀️
-            </button></li>
-        </ul>
-        <label for="menu_btn" class="btn menu_btn">
-          <i class="fas fa-bars"></i>
-        </label>
+            <li class="nav-item mt-2 mt-lg-0">
+              <a class="btn px-4 fw-bold text-white rounded-2 btn-reserva-jujuy" href="contacto.html">CONTACTO</a>
+            </li>
+
+            <li class="nav-item mt-2 mt-lg-0 d-flex align-items-center">
+              <button id="zenfit-toggle-mode" aria-label="Cambiar modo" class="btn border-0 fs-5 p-0 ms-lg-2"
+                style="color: var(--text-color);">
+                <i id="icono-modo" class="bi bi-brightness-high-fill"></i>
+              </button>
+            </li>
+
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
@@ -117,51 +132,51 @@
 
   <script src="js/contacto.js"></script>
 
-  <footer>
-    <div class="main-content">
-      <div class="left box">
-        <h3>Suscríbete a nuestro Newsletter</h3>
-        <div class="content">
-          <form action="#" class="newsletter-form">
+  <footer class="footer-jujuy pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5 text-center text-lg-start">
+
+        <div class="col-lg-4">
+          <h3 class="footer-title-jujuy">Suscríbete a nuestro Newsletter</h3>
+          <form action="#" class="newsletter-form-jujuy mx-auto mx-lg-0">
             <input type="email" placeholder="Email" required>
             <button type="submit">Enviar</button>
           </form>
 
-          <h3 class="social-title">Enlaces a redes sociales</h3>
-          <div class="social">
+          <h3 class="footer-title-jujuy mt-4">Enlaces a redes sociales</h3>
+          <div class="social-jujuy d-flex justify-content-center justify-content-lg-start gap-2">
             <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><span class="fab fa-facebook-f"></span></a>
             <a href="https://www.instagram.com/?hl=es" target="_blank"><span class="fab fa-instagram"></span></a>
             <a href="https://x.com/?lang=es" target="_blank"><span class="fab fa-twitter"></span></a>
             <a href="https://www.youtube.com/" target="_blank"><span class="fab fa-youtube"></span></a>
           </div>
         </div>
-      </div>
 
-      <div class="center box">
-        <h3>Links</h3>
-        <div class="content">
-          <ul class="footer-links">
+        <div class="col-lg-4">
+          <h3 class="footer-title-jujuy">Links</h3>
+          <ul class="list-unstyled footer-links-jujuy">
             <li><a href="#">Contacto</a></li>
             <li><a href="#">Sobre Nosotros</a></li>
             <li><a href="#">Políticas</a></li>
           </ul>
         </div>
-      </div>
 
-      <div class="right box">
-        <h3>Mapa interactivo embebido</h3>
-        <div class="content">
-          <div class="mapa">
+        <div class="col-lg-4">
+          <h3 class="footer-title-jujuy">Mapa interactivo embebido</h3>
+          <div class="mapa-jujuy">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29335.355984855898!2d-65.37155270283667!3d-23.209604208719668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9404e9a4ba40a8c1%3A0x5ff8703d0479ecf9!2sHumahuaca%2C%20Jujuy!5e0!3m2!1ses-419!2sar!4v1775947113125!5m2!1ses-419!2sar"
               width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="bottom">
-      <p>&copy; 2026 Jujuy Turismo - Website</p>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-12 text-center border-top pt-4" style="border-color: rgba(255,255,255,0.1) !important;">
+          <p class="mb-0 text-white-50 small">© 2026 Jujuy Turismo</p>
+        </div>
+      </div>
     </div>
   </footer>
 
