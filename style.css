@@ -13,6 +13,557 @@
   --transition: all 0.3s ease;
 }
 
+  /* ══════════════════════════════
+     PAG Precios
+  ══════════════════════════════ */
+  * { box-sizing: border-box; }
+  body { background: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
+ 
+  .precios-section {
+    padding: clamp(1.5rem, 4vw, 3rem) clamp(.75rem, 3vw, 1.5rem);
+  }
+ 
+  .section-heading {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: .25rem;
+    margin: 3rem;
+  }
+
+  .section-sub {
+    text-align: center;
+    font-size: .875rem;
+    color: var(--text-color);
+    margin-bottom: 1.75rem;
+  }
+ 
+ 
+  /*  TOGGLE  */
+  .toggle-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+  }
+ 
+  .toggle-label {
+    font-size: .875rem;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: color .2s;
+    white-space: nowrap;
+  }
+ 
+  .toggle-label.active { color: var(--text-color); }
+ 
+  .form-check-input.t-switch {
+    width: 3rem;
+    height: 1.5rem;
+    cursor: pointer;
+    background-color: #dee2e6;
+    border: 1px solid #ced4da;
+    flex-shrink: 0;
+  }
+ 
+  .form-check-input.t-switch:checked {
+    background-color: #1a1a2e;
+    border-color: #1a1a2e;
+  }
+ 
+  .form-check-input.t-switch:focus { box-shadow: none; }
+ 
+ 
+  /* GRID RESPONSIVE DE CARDS */
+  .cards-grid {
+    display: grid;
+    gap: .875rem;
+    grid-template-columns: 1fr;
+  }
+ 
+  @media (min-width: 576px) {
+    .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+ 
+  @media (min-width: 992px) {
+    .cards-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+ 
+  @media (min-width: 1200px) {
+    .cards-grid {
+      grid-template-columns: repeat(3, minmax(0, 340px));
+      justify-content: center;
+    }
+  }
+ 
+ 
+  /* PLANES */
+  .plan-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.4rem 1.25rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: border-color .25s, transform .25s, box-shadow .25s;
+  }
+ 
+  /* Hover — solo en dispositivos con puntero (desktop/tablet con mouse) */
+  @media (hover: hover) {
+    .plan-card:hover {
+      border-color: #adb5bd;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    }
+    /* La card featured mantiene su borde de color al hacer hover */
+    .plan-card.featured:hover {
+      border-color: #7DF527;
+      box-shadow: 0 8px 28px rgba(13, 110, 253, .12);
+    }
+  }
+ 
+  /* Card destacada (Aventura) */
+  .plan-card.featured {
+    border: 2px solid #7DF527;
+  }
+ 
+ 
+  /* ── Encabezado de card ── */
+  .badge-pop {
+    display: inline-block;
+    background: #e7f0ff;
+    color: #0a4cc7;
+    font-size: .7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: .6rem;
+    letter-spacing: .02em;
+  }
+ 
+  .plan-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin: 0 0 .3rem;
+  }
+ 
+  .plan-ahorro {
+    display: inline-block;
+    font-size: .72rem;
+    color: #146c43;
+    background: #d1e7dd;
+    border-radius: 6px;
+    padding: 3px 8px;
+    margin-bottom: .8rem;
+  }
+ 
+  /* ── Precio ── */
+  .plan-price {
+    font-size: clamp(1.25rem, 3.5vw, 1.6rem);
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0;
+    line-height: 1.1;
+  }
+ 
+  .plan-price-label {
+    font-size: .72rem;
+    color: #adb5bd;
+    margin: 0 0 .9rem;
+  }
+ 
+  .plan-divider {
+    border: none;
+    border-top: 1px solid #f1f3f5;
+    margin: .65rem 0;
+  }
+ 
+ 
+  /* ── Lista de características ── */
+  .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.1rem;
+    flex: 1;
+  }
+ 
+  .plan-features li {
+    font-size: .8125rem;
+    color: #495057;
+    padding: 4px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+  }
+ 
+  /* Ícono check (SVG inline como background) */
+  .plan-features li::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    min-width: 15px;
+    margin-top: 1px;
+    border-radius: 50%;
+    background-color: #d1e7dd;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%23146c43' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+  }
+ 
+  /* Ítem desactivado */
+  .plan-features li.off {
+    color: #adb5bd;
+  }
+ 
+  .plan-features li.off::before {
+    background-color: #f1f3f5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 3l6 6M9 3l-6 6' stroke='%23adb5bd' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+ 
+ 
+  /* ── Botones ── */
+  .btn-plan {
+    font-size: .8125rem;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: all .15s;
+    font-weight: 500;
+  }
+ 
+  .btn-outline-plan {
+    background: #7DF527;
+    border: 1px solid #ced4da;
+    color: #1a1a2e;
+  }
+ 
+  .btn-outline-plan:hover {
+    opacity: .85;
+    border-color: #adb5bd;
+  }
+ 
+  .btn-filled-plan {
+    background: #7DF527;
+    border: none;
+    color: #000;
+  }
+ 
+  .btn-filled-plan:hover { opacity: .85; }
+ 
+ 
+  /* ── Tooltip trigger (subrayado punteado) ── */
+  .has-tip {
+    border-bottom: 1px dashed #adb5bd;
+    cursor: help;
+  }
+
+
+/* ══════════════════════════════
+         PAG. Destinos
+══════════════════════════════ */
+body {
+  background: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+ 
+.sec { padding: 2.5rem 1rem; }
+
+.sec#id-galeria {
+  background: #976f55;
+; /* el color que quieras */
+}
+ 
+.sec-label {
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  margin-bottom: .25rem;
+}
+ 
+.sec-title {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: .25rem;
+  padding: 2rem;
+}
+ 
+ 
+/* ══════════════════════════════
+   FILTROS
+   Botones pill que marcan la categoría activa.
+   jQuery les añade/quita la clase .activo
+══════════════════════════════ */
+.filtros-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 1.5rem;
+}
+ 
+.btn-filtro-dest {
+  font-size: .75rem;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid #dee2e6;
+  background: #ffffff;
+  color: #000;
+  cursor: pointer;
+  transition: all .18s;
+  font-weight: 400;
+}
+ 
+.btn-filtro-dest:hover {
+  border-color: #adb5bd;
+  color: #1a1a2e;
+  background: #f1f3f5;
+}
+ 
+.btn-filtro-dest.activo {
+  background: #1a1a2e;
+  color: #fff;
+  border-color: #1a1a2e;
+}
+ 
+ 
+/* ══════════════════════════════
+   GRID GALERÍA
+   Mobile:      1 columna  (<576px)
+   Tablet:      2 columnas (≥576px)
+   Desktop:     3 columnas (≥992px)
+══════════════════════════════ */
+.galeria-grid {
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: 1fr;
+}
+ 
+@media (min-width: 576px) {
+  .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+}
+ 
+@media (min-width: 992px) {
+  .galeria-grid { grid-template-columns: repeat(3, 1fr); }
+}
+ 
+/* Ítem de galería — zoom con CSS + jQuery fadeIn/fadeOut */
+.gal-item {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  border: 1px solid #e9ecef;
+}
+ 
+.gal-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease, filter .3s ease;
+  display: block;
+}
+ 
+/* Efecto zoom al hover */
+.gal-item:hover img {
+  transform: scale(1.07);
+  filter: brightness(.82);
+}
+ 
+/* Overlay con categoría */
+.gal-item .gal-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity .3s;
+  display: flex;
+  align-items: flex-end;
+  padding: .75rem;
+}
+ 
+.gal-item:hover .gal-overlay { opacity: 1; }
+ 
+.gal-cat {
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.9);
+  font-weight: 500;
+}
+ 
+/* Clase que jQuery añade a los ítems que NO corresponden al filtro */
+.gal-item.oculto { display: none; }
+ 
+ 
+/* ══════════════════════════════
+   CARDS LUGARES DESTACADOS
+   Zoom en imagen con overflow hidden en wrapper
+══════════════════════════════ */
+.dest-card {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .2s, transform .25s, box-shadow .2s;
+}
+ 
+@media (hover: hover) {
+  .dest-card:hover {
+    border-color: #adb5bd;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.07);
+  }
+}
+ 
+.dest-card-img-wrap { overflow: hidden; }
+ 
+.dest-card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+ 
+/* Zoom de imagen al hover en card */
+.dest-card:hover .dest-card-img { transform: scale(1.06); }
+ 
+.dest-card-body {
+  padding: .9rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+ 
+.dest-card-title {
+  font-size: .875rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0;
+}
+ 
+.dest-card-desc {
+  font-size: .78rem;
+  color: #6c757d;
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+ 
+.dest-card-btn {
+  font-size: .75rem;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  background: transparent;
+  color: #495057;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: .5rem;
+  transition: all .15s;
+}
+ 
+.dest-card-btn:hover {
+  background: #f8f9fa;
+  color: #1a1a2e;
+  border-color: #adb5bd;
+}
+ 
+ 
+/* ══════════════════════════════
+   TABLA DE PRECIOS RESPONSIVE
+   Bootstrap .table-responsive para scroll horizontal.
+   En mobile (<576px): cada <td> se apila con su label.
+══════════════════════════════ */
+.tabla-wrap {
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+ 
+.tabla-wrap table { margin: 0; font-size: .8125rem; }
+ 
+.tabla-wrap thead th {
+  background: #f8f9fa;
+  color: #6c757d;
+  font-weight: 600;
+  font-size: .7rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e9ecef !important;
+  padding: .65rem 1rem;
+}
+ 
+.tabla-wrap tbody td {
+  padding: .65rem 1rem;
+  color: #1a1a2e;
+  border-color: #e9ecef !important;
+  vertical-align: middle;
+}
+ 
+.tabla-wrap tbody tr { transition: background .15s; }
+.tabla-wrap tbody tr:hover { background: #f8f9fa; }
+ 
+/* Badges de categoría */
+.badge-cat {
+  font-size: .7rem;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+ 
+.badge-cultural  { background: #dbeafe; color: #1e40af; }
+.badge-naturaleza{ background: #dcfce7; color: #166534; }
+.badge-gastro    { background: #fef9c3; color: #854d0e; }
+.badge-otro      { background: #f1f5f9; color: #475569; }
+ 
+/* ── Mobile stacked table (<576px) ── */
+@media (max-width: 575px) {
+  .tabla-wrap table thead { display: none; }
+ 
+  .tabla-wrap table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .45rem 1rem;
+    font-size: .78rem;
+  }
+ 
+  /* Muestra el nombre de columna antes del valor */
+  .tabla-wrap table td::before {
+    content: attr(data-label);
+    color: #adb5bd;
+    font-size: .7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    flex-shrink: 0;
+    margin-right: .75rem;
+  }
+ 
+  .tabla-wrap table tr {
+    border-bottom: 1px solid #e9ecef;
+    display: block;
+    padding: .25rem 0;
+  }
+}
+
+
 /* Reset & Base Styles */
 * {
   margin: 0;
@@ -23,6 +574,7 @@
 body {
   background-color: var(--background);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 .container {
@@ -44,22 +596,6 @@ h2 {
   margin: 2rem;
   text-align: center;
 }
-
-/* Buttons */
-/* .btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--transition);
-  cursor: pointer;
-}*/
-
-/* .btn-primary {
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  color: var(--text-color);
-}*/
 
 .btn-outline {
   border: 2px solid var(--primary-color);
