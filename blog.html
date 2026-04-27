@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JUJUY TURISMO</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,234 +16,344 @@
 
 <body>
   <header>
-    <nav>
-      <div class="wrapper">
-        <div class="logo">
-          <a href="index.html">
-            <img id="logo-jujuy" src="img/logo-jujuy-turismo.png" alt="Logo Jujuy Turismo">
-          </a>
-        </div>
-        <input type="radio" name="slide" id="menu_btn" />
-        <input type="radio" name="slide" id="cancel_btn" />
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm navbar-jujuy">
+      <div class="container container-jujuy">
 
-        <ul class="nav_links">
-          <label for="cancel_btn" class="btn cancel_btn">
-            <i class="fas fa-times"></i>
-          </label>
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img id="logo-jujuy" src="img/logo-jujuy-turismo.png" alt="Logo Jujuy Turismo" class="navbar-jujuy-logo">
+        </a>
 
-          <li>
-            <a href="destinos.html" class="desktop_item">DESTINOS</a>
-            <input type="checkbox" id="showMega" />
-            <label for="showMega" class="mobile_item">DESTINOS</label>
-            <div class="mega_box">
-              <div class="content">
-                <div class="row img_row">
-                  <div class="services_img"></div>
-                </div>
-                <div class="row">
-                  <ul class="mega_links first_links">
-                    <li><a href="destinos.html#id-section-card">Pumamarca</a></li>
-                    <li><a href="destinos.html#id-section-card">Salinas Grandes</a></li>
-                    <li><a href="destinos.html#id-section-card">Humahuaca</a></li>
-                  </ul>
-                </div>
-                <div class="row">
-                  <ul class="mega_links">
-                    <li><a href="destinos.html#id-section-table">Precios por Lugar</a></li>
-                    <li><a href="destinos.html#id-galeria">Galeria</a></li>
-                  </ul>
-                </div>
-                <div class="row">
-                  <ul class="mega_links">
-                    <li><a href="blog.html">Blog</a></li>
-                  </ul>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion"
+          aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+          <ul class="navbar-nav align-items-lg-center gap-2 gap-lg-3 py-3 py-lg-0">
+
+            <li class="nav-item dropdown position-lg-static">
+              <a class="nav-link dropdown-toggle fw-bold nav-link-jujuy" href="#" id="destinosDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                DESTINOS
+              </a>
+
+              <div class="dropdown-menu w-100 mt-0 border-0 shadow pt-3 pb-4 px-4 dropdown-mega-jujuy"
+                aria-labelledby="destinosDropdown">
+                <div class="container">
+                  <div class="row g-4">
+                    <div class="col-lg-3 d-none d-lg-block">
+                      <div class="rounded w-100 img-mega-menu"></div>
+                    </div>
+                    <div class="col-lg-3">
+                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                        <li><a class="text-decoration-none link-mega" href="destinos.html">Nuestros Destinos</a></li>
+                        <li><a class="text-decoration-none link-mega" href="educacion.html">Simulación de Phishing</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-3">
+                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                        <li><a class="text-decoration-none link-mega" href="destinos.html#id-section-table">Precios por
+                            Lugar</a></li>
+                        <li><a class="text-decoration-none link-mega" href="destinos.html#id-galeria">Galería</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-3">
+                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                        <li><a class="text-decoration-none link-mega" href="blog.html">Blog</a></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
+            </li>
 
-          <li><a href="agencias.html">AGENCIAS</a></li>
-          <li><a href="precios.html">PRECIOS</a></li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold nav-link-jujuy" href="agencias.html">AGENCIAS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold nav-link-jujuy" href="precios.html">PRECIOS</a>
+            </li>
 
-          <li><a href="contacto.html" class="btn-reserva">CONTACTO</a></li>
-          <li><button id="zenfit-toggle-mode" aria-label="Cambiar modo" class="zenfit-modo-btn">
-              ☀️
-            </button></li>
-        </ul>
-        <label for="menu_btn" class="btn menu_btn">
-          <i class="fas fa-bars"></i>
-        </label>
+            <li class="nav-item mt-2 mt-lg-0">
+              <a class="btn px-4 fw-bold text-white rounded-2 btn-reserva-jujuy" href="contacto.html">CONTACTO</a>
+            </li>
+
+            <li class="nav-item mt-2 mt-lg-0 d-flex align-items-center">
+              <button id="zenfit-toggle-mode" aria-label="Cambiar modo" class="btn border-0 fs-5 p-0 ms-lg-2"
+                style="color: var(--text-color);">
+                <i id="icono-modo" class="bi bi-brightness-high-fill"></i>
+              </button>
+            </li>
+
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
 
 
-  <section class="revista-blog efecto-revelar">
-
-    <input type="radio" name="filtro" id="filtro-todos" checked>
-    <input type="radio" name="filtro" id="filtro-cultural">
-    <input type="radio" name="filtro" id="filtro-gastronomico">
-    <input type="radio" name="filtro" id="filtro-religioso">
-
-    <div class="revista-blog__filtros">
-      <label for="filtro-todos">Todos</label>
-      <label for="filtro-cultural">Cultural</label>
-      <label for="filtro-gastronomico">Gastronómico</label>
-      <label for="filtro-religioso">Religioso</label>
+  <section class="revista-blog efecto-revelar container-fluid my-5 pt-5">
+    <h2 class="title-agencias">NOTICIAS</h2>
+    <div class="revista-blog__filtros px-4 px-md-5">
+      <button class="btn-filtro activo" data-filter="todos">Todos</button>
+      <button class="btn-filtro" data-filter="cultural">Cultural</button>
+      <button class="btn-filtro" data-filter="gastronomico">Gastronómico</button>
+      <button class="btn-filtro" data-filter="religioso">Religioso</button>
     </div>
 
-    <div class="revista-blog__grid">
-      <article class="revista-blog__articulo cultural">
-        <h3>Los mejores trekkings en la Quebrada</h3>
-        <small>Publicado el 12 de abril, 2026 <span class="tag">Cultural</span></small>
-        <p>Descubrí senderos increíbles en Purmamarca y Tilcara para conectar con la naturaleza a pies.</p>
-        <a href="#" class="leer-mas">Leer más</a>
-      </article>
+    <div class="row g-4 revista-blog__grid">
 
-      <article class="revista-blog__articulo religioso">
-        <h3>Desafío 4x4: Hornocal y más</h3>
-        <small>Publicado el 10 de abril, 2026· <span class="tag">Religioso</span></small>
-        <p>Subí a los 4700 metros de altura y poné a prueba tu resistencia en el Cerro de 14 Colores.</p>
-        <a href="#" class="leer-mas">Leer más</a>
-      </article>
-
-      <article class="revista-blog__articulo gastronomico">
-        <h3>Sabores de la Puna: Humita y Tamal</h3>
-        <small>Publicado el 5 de marzo, 2026· <span class="tag">Gastronómico</span></small>
-        <p>Un recorrido gastronómico por los platos típicos que alimentan el alma en el norte argentino.</p>
-        <a href="#" class="leer-mas">Leer más</a>
-      </article>
-
-      <article class="revista-blog__articulo cultural">
-        <h3>Paseo de los Colorados al amanecer</h3>
-        <small>Publicado el 2 de marzo, 2026· <span class="tag">Cultural</span></small>
-        <p>Una caminata suave pero intensa por los rojos vibrantes de Purmamarca antes de que salga el sol.</p>
-        <a href="#" class="leer-mas">Leer más</a>
-      </article>
-
-      <article class="revista-blog__articulo religioso">
-        <h3>Cultura Viva: El Éxodo Jujeño</h3>
-        <small>Publicado el 20 de febrero, 2026· <span class="tag">Religioso</span></small>
-        <p>Conocé la historia y la fuerza de un pueblo que marcó el destino de la libertad argentina.</p>
-        <a href="#" class="leer-mas">Leer más</a>
-      </article>
-
-      <article class="revista-blog__articulo gastronomico">
-        <h3>El secreto de la verdadera empanada jujeña</h3>
-        <small>Publicado el 15 de enero, 2026 <span class="tag">Gastronómico</span></small>
-        <p>Descubrí por qué nuestra receta tradicional con carne cortada a cuchillo, papa y ese toque picantito no tiene igual en todo el país.</p>
-        <a href="#" class="leer-mas">Leer más</a>
-      </article>
-
-      <article class="revista-blog__articulo religioso">
-        <h3>La fe en las alturas: Punta Corral</h3>
-        <small>Publicado el 28 de marzo, 2026· <span class="tag">Religioso</span></small>
-        <p>Acompañá la devoción de miles de fieles y bandas de sikuris que ascienden por los cerros de Tumbaya para honrar a la Virgen.</p>
-        <a href="#" class="leer-mas">Leer más</a>
-      </article>
-
-      <article class="revista-blog__articulo cultural">
-        <h3>Colores y fiesta: El desentierro del Diablo</h3>
-        <small>Publicado el 10 de febrero, 2026· <span class="tag">Cultural</span></small>
-        <p>Viví la magia, la albahaca y la alegría inigualable del auténtico Carnaval en la Quebrada de Humahuaca.</p>
-        <a href="#" class="leer-mas">Leer más</a>
-      </article>
-
-      <article class="revista-blog__articulo gastronomico">
-        <h3>Ruta del vino: Brindis de extrema altura</h3>
-        <small>Publicado el 5 de enero, 2026· <span class="tag">Gastronómico</span></small>
-        <p>Un viaje único por las bodegas de la Quebrada, donde las uvas crecen abrazando el sol a más de 2500 metros sobre el nivel del mar.</p>
-        <a href="#" class="leer-mas">Leer más</a>
-      </article>
-
-    </div>
-  </section>
-
-
-  <section class="comentarios-blog efecto-revelar">
-    <h2 class="comentarios-blog__titulo">COMENTARIOS</h2>
-
-    <div class="comentarios-blog__lista">
-      <div class="comentarios-blog__comentario">
-        <div class="comentarios-blog__avatar" data-inicial="A"></div>
-        <div class="comentarios-blog__contenido">
-          <h4>Ana Maria</h4>
-          <p>¡Qué buenas recomendaciones! El atardecer en las Salinas Grandes fue, sin duda, lo mejor de mi viaje.
-            ¡Totalmente mágico! ✨</p>
-        </div>
+      <div class="col-12 col-lg-8 articulo cultural">
+        <article class="revista-blog__articulo h-100">
+          <img
+            src="https://images.unsplash.com/photo-1606954901803-c7c2432fc64e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Trekking en la Quebrada" class="revista-blog__imagen img-destacada">
+          <h3>Los mejores trekkings en la Quebrada</h3>
+          <small>Publicado el 12 de abril, 2026 <span class="tag">Cultural</span></small>
+          <p>Descubrí senderos increíbles en Purmamarca y Tilcara para conectar con la naturaleza a pies.</p>
+          <a href="#" class="leer-mas">Leer más</a>
+        </article>
       </div>
 
-      <div class="comentarios-blog__comentario">
-        <div class="comentarios-blog__avatar" data-inicial="L"></div>
-        <div class="comentarios-blog__contenido">
-          <h4>Esteban Quito</h4>
-          <p>Muy útil la info sobre el transporte a Humahuaca. Las empanadas que probé en el mercado central son las
-            mejores que comí en mi vida. 🥟</p>
-        </div>
+      <div class="col-12 col-md-6 col-lg-4 articulo religioso">
+        <article class="revista-blog__articulo h-100">
+          <img
+            src="https://images.unsplash.com/photo-1606954901803-c7c2432fc64e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Trekking en la Quebrada" class="revista-blog__imagen">
+          <h3>Desafío 4x4: Hornocal y más</h3>
+          <small>Publicado el 10 de abril, 2026· <span class="tag">Religioso</span></small>
+          <p>Subí a los 4700 metros de altura y poné a prueba tu resistencia en el Cerro de 14 Colores.</p>
+          <a href="#" class="leer-mas">Leer más</a>
+        </article>
       </div>
 
-      <div class="comentarios-blog__comentario">
-        <div class="comentarios-blog__avatar" data-inicial="M"></div>
-        <div class="comentarios-blog__contenido">
-          <h4>Luisa Fernandez</h4>
-          <p>¿Podrían subir un post con consejos para evitar el mal de altura en la Puna? Voy en unos meses y me vendría
-            genial. 🙏</p>
-        </div>
+      <div class="col-12 col-md-6 col-lg-4 articulo gastronomico">
+        <article class="revista-blog__articulo h-100">
+          <img
+            src="https://images.unsplash.com/photo-1606954901803-c7c2432fc64e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Trekking en la Quebrada" class="revista-blog__imagen">
+          <h3>Sabores de la Puna: Humita y Tamal</h3>
+          <small>Publicado el 5 de marzo, 2026· <span class="tag">Gastronómico</span></small>
+          <p>Un recorrido gastronómico por los platos típicos que alimentan el alma en el norte argentino.</p>
+          <a href="#" class="leer-mas">Leer más</a>
+        </article>
       </div>
+
+      <div class="col-12 col-md-6 col-lg-4 articulo cultural">
+        <article class="revista-blog__articulo h-100">
+          <img
+            src="https://images.unsplash.com/photo-1606954901803-c7c2432fc64e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Trekking en la Quebrada" class="revista-blog__imagen">
+          <h3>Paseo de los Colorados al amanecer</h3>
+          <small>Publicado el 2 de marzo, 2026· <span class="tag">Cultural</span></small>
+          <p>Una caminata suave pero intensa por los rojos vibrantes de Purmamarca antes de que salga el sol.</p>
+          <a href="#" class="leer-mas">Leer más</a>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 articulo religioso">
+        <article class="revista-blog__articulo h-100">
+          <img
+            src="https://images.unsplash.com/photo-1606954901803-c7c2432fc64e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Trekking en la Quebrada" class="revista-blog__imagen">
+          <h3>Cultura Viva: El Éxodo Jujeño</h3>
+          <small>Publicado el 20 de febrero, 2026· <span class="tag">Religioso</span></small>
+          <p>Conocé la historia y la fuerza de un pueblo que marcó el destino de la libertad argentina.</p>
+          <a href="#" class="leer-mas">Leer más</a>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 articulo gastronomico">
+        <article class="revista-blog__articulo h-100">
+          <img
+            src="https://images.unsplash.com/photo-1606954901803-c7c2432fc64e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Trekking en la Quebrada" class="revista-blog__imagen">
+          <h3>El secreto de la verdadera empanada jujeña</h3>
+          <small>Publicado el 15 de enero, 2026 <span class="tag">Gastronómico</span></small>
+          <p>Descubrí por qué nuestra receta tradicional con carne cortada a cuchillo no tiene igual.</p>
+          <a href="#" class="leer-mas">Leer más</a>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 articulo religioso">
+        <article class="revista-blog__articulo h-100">
+          <img
+            src="https://images.unsplash.com/photo-1606954901803-c7c2432fc64e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Trekking en la Quebrada" class="revista-blog__imagen">
+          <h3>La fe en las alturas: Punta Corral</h3>
+          <small>Publicado el 28 de marzo, 2026· <span class="tag">Religioso</span></small>
+          <p>Acompañá la devoción de miles de fieles y bandas de sikuris que ascienden por los cerros.</p>
+          <a href="#" class="leer-mas">Leer más</a>
+        </article>
+      </div>
+
+      <div class="col-12 articulo cultural">
+        <article class="revista-blog__articulo h-100">
+          <img
+            src="https://images.unsplash.com/photo-1606954901803-c7c2432fc64e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Trekking en la Quebrada" class="revista-blog__imagen img-destacada">
+          <h3>Colores y fiesta: El desentierro del Diablo</h3>
+          <small>Publicado el 10 de febrero, 2026· <span class="tag">Cultural</span></small>
+          <p>Viví la magia, la albahaca y la alegría inigualable del auténtico Carnaval en la Quebrada de Humahuaca.</p>
+          <a href="#" class="leer-mas">Leer más</a>
+        </article>
+      </div>
+
     </div>
   </section>
 
 
-  <footer>
-    <div class="main-content">
-      <div class="left box">
-        <h3>Suscríbete a nuestro Newsletter</h3>
-        <div class="content">
-          <form action="#" class="newsletter-form">
+  <section class="section-comentarios">
+    <div class="container pt-2">
+      <h2 class="title-agencias">COMENTARIOS</h2>
+    </div>
+    <div class="container my-5 py-5 text-body">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-11 col-lg-9 col-xl-7">
+          <div class="card mb-4 shadow-sm border-0 bg-light">
+            <div class="card-body">
+              <h5 class="mb-3">Deja un comentario</h5>
+              <form id="form-nuevo-comentario">
+                <div class="mb-3">
+                  <input type="text" id="input-nombre-comentario" class="form-control" placeholder="Tu nombre" required>
+                </div>
+                <div class="mb-3">
+                  <textarea id="input-texto-comentario" class="form-control" rows="3"
+                    placeholder="¿Qué te pareció el artículo?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-success fw-bold">Publicar Comentario</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="contenedor-comentarios">
+          </div>
+          <div class="d-flex flex-start mb-4">
+            <img class="rounded-circle shadow-1-strong me-3"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar" width="65" height="65" />
+            <div class="card w-100">
+              <div class="card-body p-4">
+                <div class="">
+                  <h5>Agustin Lopez</h5>
+                  <p class="small">Hace 3 horas</p>
+                  <p>
+                    Me encantó el artículo sobre los trekkings en la Quebrada. ¡Definitivamente lo probaré en mi próximo
+                    viaje a Jujuy!
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <a href="#!" class="text-decoration-none link-comentario me-2 btn-like">
+                        <i class="fas fa-thumbs-up me-1"></i>
+                        <span class="contador">132</span>
+                      </a>
+                      <a href="#!" class="text-decoration-none link-comentario btn-dislike">
+                        <i class="fas fa-thumbs-down me-1"></i>
+                        <span class="contador">15</span>
+                      </a>
+                    </div>
+                    <a href="#!" class="text-decoration-none link-comentario btn-responder"><i
+                        class="fas fa-reply me-1"></i>
+                      Responder</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-start">
+            <img class="rounded-circle shadow-1-strong me-3"
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp" alt="avatar" width="65" height="65" />
+            <div class="card w-100">
+              <div class="card-body p-4">
+                <div class="">
+                  <h5>Luisa Fernandez</h5>
+                  <p class="small">Hace 5 horas</p>
+                  <p>
+                    El artículo sobre la Ruta del Vino en la Quebrada es fascinante. No sabía que había bodegas a esa
+                    altura, ¡tengo que visitarlas!
+                  </p>
+
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                      <a href="#!" class="text-decoration-none link-comentario me-2 btn-like">
+                        <i class="fas fa-thumbs-up me-1"></i>
+                        <span class="contador">132</span>
+                      </a>
+                      <a href="#!" class="text-decoration-none link-comentario btn-dislike">
+                        <i class="fas fa-thumbs-down me-1"></i>
+                        <span class="contador">15</span>
+                      </a>
+                    </div>
+                    <a href="#!" class="text-decoration-none link-comentario btn-responder"><i
+                        class="fas fa-reply me-1"></i>
+                      Responder</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer-jujuy pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5 text-center text-lg-start">
+
+        <div class="col-lg-4">
+          <h3 class="footer-title-jujuy">Suscríbete a nuestro Newsletter</h3>
+          <form action="#" class="newsletter-form-jujuy mx-auto mx-lg-0">
             <input type="email" placeholder="Email" required>
             <button type="submit">Enviar</button>
           </form>
 
-          <h3 class="social-title">Enlaces a redes sociales</h3>
-          <div class="social">
+          <h3 class="footer-title-jujuy mt-4">Enlaces a redes sociales</h3>
+          <div class="social-jujuy d-flex justify-content-center justify-content-lg-start gap-2">
             <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><span class="fab fa-facebook-f"></span></a>
             <a href="https://www.instagram.com/?hl=es" target="_blank"><span class="fab fa-instagram"></span></a>
             <a href="https://x.com/?lang=es" target="_blank"><span class="fab fa-twitter"></span></a>
             <a href="https://www.youtube.com/" target="_blank"><span class="fab fa-youtube"></span></a>
           </div>
         </div>
-      </div>
 
-      <div class="center box">
-        <h3>Links</h3>
-        <div class="content">
-          <ul class="footer-links">
+        <div class="col-lg-4">
+          <h3 class="footer-title-jujuy">Links</h3>
+          <ul class="list-unstyled footer-links-jujuy">
             <li><a href="#">Contacto</a></li>
             <li><a href="#">Sobre Nosotros</a></li>
             <li><a href="#">Políticas</a></li>
           </ul>
         </div>
-      </div>
 
-      <div class="right box">
-        <h3>Mapa interactivo embebido</h3>
-        <div class="content">
-          <div class="mapa">
+        <div class="col-lg-4">
+          <h3 class="footer-title-jujuy">Mapa interactivo embebido</h3>
+          <div class="mapa-jujuy">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29335.355984855898!2d-65.37155270283667!3d-23.209604208719668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9404e9a4ba40a8c1%3A0x5ff8703d0479ecf9!2sHumahuaca%2C%20Jujuy!5e0!3m2!1ses-419!2sar!4v1775947113125!5m2!1ses-419!2sar"
               width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="bottom">
-      <p>&copy; 2026 Jujuy Turismo - Website</p>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-12 text-center border-top pt-4" style="border-color: rgba(255,255,255,0.1) !important;">
+          <p class="mb-0 text-white-50 small">© 2026 Jujuy Turismo</p>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/zenfit-modo.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="js/blog.js"></script>
 </body>
 
 

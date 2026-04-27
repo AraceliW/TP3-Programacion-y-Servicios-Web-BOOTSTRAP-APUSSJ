@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Pago</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-light">
+
+    <div id="seccion-inicio" class="container-fluid text-center mt-5 text-light">
+        <h1>Práctica de Seguridad Informática</h1>
+        <p class="lead">Aprende a identificar estafas en línea.</p>
+        <button id="btn-iniciar-simulacion" class="btn btn-primary btn-lg mt-3">Simulación de phishing</button>
+    </div>
+
+    <div id="seccion-ecommerce" class="container my-5 p-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Finalizar Compra - Pago Seguro</h3>
+                        <p class="text-muted">Estás a un paso de confirmar tu compra. Por favor, ingresa los datos de tu
+                            tarjeta para procesar el pago.</p>
+
+                        <form id="form-pago">
+                            <div class="mb-3">
+                                <label>Número de Tarjeta</label>
+                                <input type="text" class="form-control solo-numeros" placeholder="0000 0000 0000 0000"
+                                    maxlength="16"pattern="\d{16}" title="Debe contener exactamente 16 números" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>Titular</label>
+                                <input type="text" class="form-control solo-letras" placeholder="Nombre completo"
+                                    pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" title="Solo se permiten letras" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <label>Válida hasta</label>
+                                    <input type="text" class="form-control formato-fecha" placeholder="MM/AA"
+                                        maxlength="5" pattern="(0[1-9]|1[0-2])\/\d{2}" title="El formato debe ser MM/AA" required>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label>Código de verificación</label>
+                                    <input type="password" class="form-control solo-numeros" placeholder="123"
+                                        maxlength="3" pattern="\d{3}" title="Debe contener 3 números" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 btn-lg">Confirmar Pago</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalErrorPago" data-bs-backdrop="static" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-warning">
+                <div class="modal-header bg-warning text-dark">
+                    <h5 class="modal-title">⚠️ Error de Autorización</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Tu entidad bancaria ha bloqueado temporalmente esta transacción por motivos de seguridad.</p>
+                    <p>Para autorizar el pago y evitar el bloqueo de tus tarjetas, debes validar tu identidad
+                        directamente en el portal de tu banco.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning w-100" id="btn-ir-banco">Verificar identidad en Banco
+                        Macro ahora ➔</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="seccion-banco-falso" class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow">
+                    <div class="banco-header text-center elemento-sospechoso" id="error-logo">
+                        <h2>Banco Makro</h2>
+                        <p class="mb-0">Autogestión de Seguridad</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-danger text-center elemento-sospechoso" id="error-urgencia">
+                            Validación de identidad requerida para desbloquear tarjeta.
+                        </div>
+                        <div id="instrucciones-interactivas" class="alert alert-info text-center"
+                            style="display: none;">
+                            <strong>¡Modo Educativo Activado!</strong> Haz clic en los 3 elementos falsos o sospechosos
+                            de esta pantalla. <br>
+                            Errores encontrados: <span id="contador-errores">0</span>/3
+                        </div>
+                        <form id="form-banco-falso">
+                            <div class="mb-3">
+                                <label>Usuario</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>DNI</label>
+                                <input type="text" class="form-control solo-numeros" maxlength="8" pattern="\d{7,8}" title="Ingresa un DNI válido de 7 u 8 números" required>
+                            </div>
+                            <div class="mb-4 elemento-sospechoso" id="error-token">
+                                <label class="fw-bold text-danger">Clave Token de 6 dígitos / PIN de Cajero</label>
+                                <input type="password" class="form-control border-danger solo-numeros" maxlength="6"
+                                    pattern="\d{6}" title="El token debe tener 6 dígitos" disabled>
+                                <small class="text-muted">Requerido para desbloqueo de cuenta.</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 btn-lg">Desbloquear Cuenta</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPhishing" data-bs-backdrop="static" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-danger">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">🚨 ¡ACABAS DE SER VÍCTIMA DE PHISHING! 🚨</h5>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <p class="fs-5">Si esto fuera una página real, en este preciso momento los delincuentes tendrían
+                        <b>acceso total a tu cuenta bancaria y a tus ahorros</b>.
+                    </p>
+                    <p>Le acabas de entregar tu Usuario, tu Clave y tu Token a un total desconocido.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark w-100" id="btn-aprender">Cerrar y ver qué hice
+                        mal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="seccion-educativa" class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card border-primary shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">Anatomía de una estafa: ¿Cómo caíste en la trampa?</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">El Phishing es una técnica donde los estafadores se hacen pasar por empresas de
+                            confianza para robarte información. Repasemos los errores de esta simulación:</p>
+
+                        <ul class="list-group list-group-flush mt-4">
+                            <li class="list-group-item">
+                                <b>Falsa Urgencia:</b> Los bancos nunca te van a obligar a iniciar sesión de
+                                emergencia desde un link de otra página para "evitar un bloqueo".
+                            </li>
+                            <li class="list-group-item">
+                                <b>Exceso de Datos:</b> Ningún banco te pedirá tu <i>Clave Token</i> o tu <i>PIN del
+                                    cajero</i> para simplemente iniciar sesión. El Token es para aprobar transferencias.
+                            </li>
+                            <li class="list-group-item">
+                                <b>Detalles visuales:</b> Si prestabas atención, el logo decía "Banco Ma<b>k</b>ro"
+                                con K. Los estafadores suelen cometer errores sutiles.
+                            </li>
+                        </ul>
+
+                        <div class="text-center mt-4">
+                            <button class="btn btn-outline-primary" onclick="location.reload()">Reiniciar
+                                Simulación</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/zenfit-modo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="js/educacion.js"></script>
+
+</body>
+
+</html>
