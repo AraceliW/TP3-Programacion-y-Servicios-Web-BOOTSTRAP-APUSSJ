@@ -1,324 +1,473 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JUJUY TURISMO</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JUJUY TURISMO</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css" />
+  <script>
+    $(document).ready(function () {
+      // 🔴 ESTADO INICIAL (SIN CSS)
+      $("#titleHero").css({ opacity: 0, marginTop: "80px" });
+      $("#textHero").css({ opacity: 0, marginTop: "80px" });
+      $("#btnHero").css({ opacity: 0, marginTop: "80px" });
 
-</head>
+      // 🎬 ANIMACIÓN SECUENCIAL
+      $("#titleHero").delay(300).animate(
+        {
+          opacity: 1,
+          marginTop: "0px",
+        },
+        800,
+      );
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg fixed-top shadow-sm navbar-jujuy">
-      <div class="container container-jujuy">
+      $("#textHero").delay(1000).animate(
+        {
+          opacity: 1,
+          marginTop: "0px",
+        },
+        600,
+      );
 
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img id="logo-jujuy" src="img/logo-jujuy-turismo.png" alt="Logo Jujuy Turismo" class="navbar-jujuy-logo">
-        </a>
+      $("#btnHero").delay(1600).animate(
+        {
+          opacity: 1,
+          marginTop: "0px",
+        },
+        600,
+      );
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion"
-          aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      // ✍️ TYPEWRITER (solo jQuery)
+      const texto = "Aventuras inolvidables en Jujuy";
+      let i = 0;
 
-        <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
-          <ul class="navbar-nav align-items-lg-center gap-2 gap-lg-3 py-3 py-lg-0">
+      function escribir() {
+        if (i < texto.length) {
+          $("#textHero").append(texto.charAt(i));
+          i++;
+          setTimeout(escribir, 40);
+        }
+      }
 
-            <li class="nav-item dropdown position-lg-static">
-              <a class="nav-link dropdown-toggle fw-bold nav-link-jujuy" href="#" id="destinosDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                DESTINOS
-              </a>
+      setTimeout(escribir, 1200);
+    });
+  </script>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg fixed-top shadow-sm navbar-light bg-white navbar-jujuy"
+      >
+        <div class="container">
+          <!-- LOGO -->
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="img/logo-jujuy-turismo.png" alt="Logo" height="50" />
+          </a>
 
-              <div class="dropdown-menu w-100 mt-0 border-0 shadow pt-3 pb-4 px-4 dropdown-mega-jujuy"
-                aria-labelledby="destinosDropdown">
-                <div class="container">
-                  <div class="row g-4">
-                    <div class="col-lg-3 d-none d-lg-block">
-                      <div class="rounded w-100 img-mega-menu"></div>
-                    </div>
-                    <div class="col-lg-3">
-                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a class="text-decoration-none link-mega" href="destinos.html">Nuestros Destinos</a></li>
-                        <li><a class="text-decoration-none link-mega" href="educacion.html">Simulación de Phishing</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-lg-3">
-                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a class="text-decoration-none link-mega" href="destinos.html#id-section-table">Precios por
-                            Lugar</a></li>
-                        <li><a class="text-decoration-none link-mega" href="destinos.html#id-galeria">Galería</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-lg-3">
-                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a class="text-decoration-none link-mega" href="blog.html">Blog</a></li>
-                      </ul>
+          <!-- BOTÓN MOBILE -->
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuNavegacion"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- MENÚ -->
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="menuNavegacion"
+          >
+            <ul
+              class="navbar-nav align-items-lg-center gap-2 gap-lg-3 py-3 py-lg-0"
+            >
+              <!-- DROPDOWN / MEGA MENÚ -->
+              <li class="nav-item dropdown position-lg-static">
+                <a
+                  class="nav-link dropdown-toggle fw-bold"
+                  href="destinos.html"
+                  id="destinosDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  DESTINOS
+                </a>
+
+                <!-- MEGA MENU -->
+                <div class="dropdown-menu border-0 shadow dropdown-mega-jujuy">
+                  <div class="container">
+                    <div class="row g-4 py-3">
+                      <!-- IMG -->
+                      <div class="col-lg-3 d-none d-lg-block">
+                        <div class="img-mega-menu rounded"></div>
+                      </div>
+
+                      <!-- COL 1 -->
+                      <div class="col-lg-3">
+                        <ul class="list-unstyled">
+                          <li>
+                            <a href="destinos.html" class="dropdown-item"
+                              >Nuestros Destinos</a
+                            >
+                          </li>
+                          <li>
+                            <a href="educacion.html" class="dropdown-item"
+                              >Simulación de Phishing</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- COL 2 -->
+                      <div class="col-lg-3">
+                        <ul class="list-unstyled">
+                          <li>
+                            <a
+                              href="destinos.html#id-section-table"
+                              class="dropdown-item"
+                              >Precios</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="destinos.html#id-galeria"
+                              class="dropdown-item"
+                              >Galería</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- COL 3 -->
+                      <div class="col-lg-3">
+                        <ul class="list-unstyled">
+                          <li>
+                            <a href="blog.html" class="dropdown-item">Blog</a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link fw-bold nav-link-jujuy" href="agencias.html">AGENCIAS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-bold nav-link-jujuy" href="precios.html">PRECIOS</a>
-            </li>
+              <!-- LINKS -->
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="agencias.html">AGENCIAS</a>
+              </li>
 
-            <li class="nav-item mt-2 mt-lg-0">
-              <a class="btn px-4 fw-bold text-white rounded-2 btn-reserva-jujuy" href="contacto.html">CONTACTO</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="precios.html">PRECIOS</a>
+              </li>
 
-            <li class="nav-item mt-2 mt-lg-0 d-flex align-items-center">
-              <button id="zenfit-toggle-mode" aria-label="Cambiar modo" class="btn border-0 fs-5 p-0 ms-lg-2"
-                style="color: var(--text-color);">
-                <i id="icono-modo" class="bi bi-brightness-high-fill"></i>
-              </button>
-            </li>
+              <!-- BOTÓN -->
+              <li class="nav-item">
+                <a class="btn btn-dark px-4 fw-bold" href="contacto.html"
+                  >CONTACTO</a
+                >
+              </li>
 
-          </ul>
+              <!-- MODO OSCURO -->
+              <li class="nav-item d-flex align-items-center">
+                <button id="zenfit-toggle-mode" class="btn border-0 fs-5">
+                  <i id="icono-modo" class="bi bi-brightness-high-fill"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="hero">
+      <div class="promo">
+        <h1 id="titleHero" class="home-title">
+          DESCUBRE LA MAGIA <br />
+          DEL NORTE ARGENTINO
+        </h1>
+
+        <p id="textHero" class="home-text"></p>
+
+        <a href="#" id="btnHero" class="btn-hero"> EMPEZAR MI VIAJE </a>
+      </div>
+
+      <video muted autoplay loop>
+        <source src="img/video-jujuy.mp4" type="video/mp4" />
+      </video>
+
+      <div class="capa"></div>
+    </main>
+
+    <section class="section-card efecto-revelar">
+      <h2>DESTINOS DESTACADOS</h2>
+      <div class="container-card">
+        <div class="cards">
+          <div class="card-basico">
+            <div class="icon">
+              <img
+                src="https://images.unsplash.com/photo-1603155376428-87022abbfa2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Tilcara Pucara"
+              />
+            </div>
+            <div class="title">Tilcara Pucara</div>
+            <div class="description">
+              Lorem ipsum dolor sit amet icabo esse eos maiorempora tenetur mis
+              quis!
+            </div>
+            <a href="#" class="ver-mas">Ver Más</a>
+          </div>
+          <div class="card-basico">
+            <div class="icon">
+              <img
+                src="https://images.unsplash.com/photo-1586829728364-c5f74e6b6bc1?q=80&w=1088&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Salinas Grandes"
+              />
+            </div>
+            <div class="title">Salinas Grandes</div>
+            <div class="description">
+              Lorem ipsum dolor sit amet uptate t ducimus explicabo dolore
+              quaerat et suscipit!
+            </div>
+            <a href="#" class="ver-mas">Ver Más</a>
+          </div>
+          <div class="card-basico">
+            <div class="icon">
+              <img
+                src="https://images.unsplash.com/photo-1606954901803-c7c2432fc64e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Humahuaca"
+              />
+            </div>
+            <div class="title">Humahuaca</div>
+            <div class="description">
+              Lorem ipsum dolor sit ametquisquam, voluptate tempora mollitia
+              laboriosam!
+            </div>
+            <a href="#" class="ver-mas">Ver Más</a>
+          </div>
         </div>
       </div>
-    </nav>
-  </header>
+    </section>
 
+    <section class="section-stats efecto-revelar">
+      <h2>NUESTRAS CIFRAS</h2>
+      <p class="subtitle">Unete a la experiencia</p>
 
-  <main id="hero">
-    <div class="promo">
-      <h1 class="home-title">DESCUBRE LA MAGIA <br> DEL NORTE ARGENTINO</h1>
-      <p class="home-text">Aventuras inolvidables en Jujuy</p>
-      <a href="#" class="btn-hero">EMPEZAR MI VIAJE</a>
-    </div>
-
-    <video muted autoplay loop>
-      <source src="img/video-jujuy.mp4" type="video/mp4">
-    </video>
-
-    <div class="capa"></div>
-  </main>
-
-
-  <section class="section-card efecto-revelar">
-    <h2>DESTINOS DESTACADOS</h2>
-    <div class="container-card">
-      <div class="cards">
-        <div class="card-basico">
-          <div class="icon">
-            <img
-              src="https://images.unsplash.com/photo-1603155376428-87022abbfa2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Tilcara Pucara">
-          </div>
-          <div class="title">Tilcara Pucara</div>
-          <div class="description">Lorem ipsum dolor sit amet icabo esse eos maiorempora tenetur mis quis!</div>
-          <a href="#" class="ver-mas">Ver Más</a>
-        </div>
-        <div class="card-basico">
-          <div class="icon">
-            <img
-              src="https://images.unsplash.com/photo-1586829728364-c5f74e6b6bc1?q=80&w=1088&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Salinas Grandes">
-          </div>
-          <div class="title">Salinas Grandes</div>
-          <div class="description">Lorem ipsum dolor sit amet uptate t ducimus explicabo dolore quaerat et suscipit!
-          </div>
-          <a href="#" class="ver-mas">Ver Más</a>
-        </div>
-        <div class="card-basico">
-          <div class="icon">
-            <img
-              src="https://images.unsplash.com/photo-1606954901803-c7c2432fc64e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Humahuaca">
-          </div>
-          <div class="title">Humahuaca</div>
-          <div class="description">Lorem ipsum dolor sit ametquisquam, voluptate tempora mollitia laboriosam!</div>
-          <a href="#" class="ver-mas">Ver Más</a>
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="number" data-target="500">0</div>
+          <p>Visitantes Felices</p>
         </div>
 
+        <div class="stat-item">
+          <div class="number" data-target="100">0</div>
+          <p>Excursiones Disponibles</p>
+        </div>
+
+        <div class="stat-item">
+          <div class="number" data-target="50">0</div>
+          <p>Años de Experiencia</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <script>
+      $(document).ready(function () {
+        let animado = false;
 
-  <section class="section-stats efecto-revelar">
-    <h2>NUESTRAS CIFRAS</h2>
-    <p class="subtitle">Unete a la experiencia</p>
+        function iniciarContador() {
+          $(".number").each(function () {
+            let $this = $(this);
+            let target = parseInt($this.attr("data-target"));
+            let count = 0;
+            let incremento = target / 100;
 
-    <div class="stats-container">
-      <div class="stat-item">
-        <div class="number" data-target="500">0</div>
-        <p>Visitantes Felices</p>
-      </div>
+            function actualizar() {
+              if (count < target) {
+                count += incremento;
+                $this.text(Math.ceil(count));
+                setTimeout(actualizar, 20);
+              } else {
+                $this.text(target + "+");
 
-      <div class="stat-item">
-        <div class="number" data-target="100">0</div>
-        <p>Excursiones Disponibles</p>
-      </div>
+                // reinicio automático
+                setTimeout(function () {
+                  $this.text("0");
+                  count = 0;
+                  actualizar();
+                }, 3000);
+              }
+            }
 
-      <div class="stat-item">
-        <div class="number" data-target="50">0</div>
-        <p>Años de Experiencia</p>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const numbers = document.querySelectorAll(".number");
-    const speed = 100;
-    const pausaEntreReinicios = 3000; // 3 segundos de espera al llegar al final
-
-    const animateNumbers = () => {
-      numbers.forEach((num) => {
-        // Obtenemos el objetivo desde el atributo data-target
-        const target = +num.getAttribute("data-target");
-
-        const updateCount = () => {
-          // Obtenemos el número actual (quitando el + si existe)
-          const currentText = num.innerText.replace('+', '');
-          const count = +currentText;
-
-          // Calculamos el incremento
-          const increment = target / speed;
-
-          if (count < target) {
-            num.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 20); // Velocidad de la animación
-          } else {
-            num.innerText = target + "+";
-
-            // --- AQUÍ SUCEDE LA MAGIA DEL REINICIO ---
-            setTimeout(() => {
-              num.innerText = "0"; // Volvemos a cero
-              updateCount(); // Volvemos a llamar a la función para que empiece de nuevo
-            }, pausaEntreReinicios);
-          }
-        };
-
-        updateCount();
-      });
-    };
-
-    // Iniciar cuando el usuario vea la sección
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateNumbers();
-          statsObserver.unobserve(entry.target);
+            actualizar();
+          });
         }
+
+        // Detectar cuando aparece en pantalla (con jQuery)
+        $(window).on("scroll", function () {
+          let top = $(".stats-container").offset().top;
+          let scroll = $(window).scrollTop();
+          let height = $(window).height();
+
+          if (!animado && scroll + height > top + 100) {
+            iniciarContador();
+            animado = true;
+          }
+        });
       });
-    }, { threshold: 0.5 });
+    </script>
 
-    statsObserver.observe(document.querySelector(".stats-container"));
-  </script>
-
-
-
-
-  <div class="title-testimonial efecto-revelar">
-    <h2>TESTIMONIOS DE VIAJEROS</h2>
-  </div>
-
-  <section class="section-testimonial efecto-revelar">
-    <input type="radio" name="position" />
-    <input type="radio" name="position" />
-    <input type="radio" name="position" checked />
-    <input type="radio" name="position" />
-    <input type="radio" name="position" />
-    <div id="carousel">
-      <div class="item">
-        <img
-          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <h3 class="name">Ana</h3>
-        <p class="testimonial">Una experiencia increible en Pumamarca!.</p>
-      </div>
-      <div class="item">
-        <img
-          src="https://plus.unsplash.com/premium_photo-1688740375397-34605b6abe48?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <h3 class="name">Laura</h3>
-        <p class="testimonial">Una experiencia increíble en Tilcara!.</p>
-      </div>
-      <div class="item">
-        <img
-          src="https://plus.unsplash.com/premium_photo-1665461700564-78476e329876?q=80&w=1026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <h3 class="name">Nico</h3>
-        <p class="testimonial">Una experiencia increíble en Tilcara!.</p>
-      </div>
-      <div class="item">
-        <img
-          src="https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <h3 class="name">Sofía</h3>
-        <p class="testimonial">Una experiencia increíble en Tilcara!</p>
-      </div>
-      <div class="item">
-        <img
-          src="https://plus.unsplash.com/premium_photo-1689977807477-a579eda91fa2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <h3 class="name">Facu</h3>
-        <p class="testimonial">Una experiencia increíble en Tilcara!</p>
-      </div>
+    <div class="title-testimonial efecto-revelar">
+      <h2>TESTIMONIOS DE VIAJEROS</h2>
     </div>
-  </section>
 
-
-  <footer class="footer-jujuy pt-5 pb-4">
-    <div class="container">
-      <div class="row g-5 text-center text-lg-start">
-
-        <div class="col-lg-4">
-          <h3 class="footer-title-jujuy">Suscríbete a nuestro Newsletter</h3>
-          <form action="#" class="newsletter-form-jujuy mx-auto mx-lg-0">
-            <input type="email" placeholder="Email" required>
-            <button type="submit">Enviar</button>
-          </form>
-
-          <h3 class="footer-title-jujuy mt-4">Enlaces a redes sociales</h3>
-          <div class="social-jujuy d-flex justify-content-center justify-content-lg-start gap-2">
-            <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><span class="fab fa-facebook-f"></span></a>
-            <a href="https://www.instagram.com/?hl=es" target="_blank"><span class="fab fa-instagram"></span></a>
-            <a href="https://x.com/?lang=es" target="_blank"><span class="fab fa-twitter"></span></a>
-            <a href="https://www.youtube.com/" target="_blank"><span class="fab fa-youtube"></span></a>
-          </div>
+    <section class="section-testimonial efecto-revelar">
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" checked />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <div id="carousel">
+        <div class="item">
+          <img
+            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=761&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <h3 class="name">Ana</h3>
+          <p class="testimonial">Una experiencia increible en Pumamarca!.</p>
         </div>
-
-        <div class="col-lg-4">
-          <h3 class="footer-title-jujuy">Links</h3>
-          <ul class="list-unstyled footer-links-jujuy">
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">Sobre Nosotros</a></li>
-            <li><a href="#">Políticas</a></li>
-          </ul>
+        <div class="item">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1688740375397-34605b6abe48?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <h3 class="name">Laura</h3>
+          <p class="testimonial">Una experiencia increíble en Tilcara!.</p>
         </div>
-
-        <div class="col-lg-4">
-          <h3 class="footer-title-jujuy">Mapa interactivo embebido</h3>
-          <div class="mapa-jujuy">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29335.355984855898!2d-65.37155270283667!3d-23.209604208719668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9404e9a4ba40a8c1%3A0x5ff8703d0479ecf9!2sHumahuaca%2C%20Jujuy!5e0!3m2!1ses-419!2sar!4v1775947113125!5m2!1ses-419!2sar"
-              width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
+        <div class="item">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1665461700564-78476e329876?q=80&w=1026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <h3 class="name">Nico</h3>
+          <p class="testimonial">Una experiencia increíble en Tilcara!.</p>
         </div>
-
+        <div class="item">
+          <img
+            src="https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <h3 class="name">Sofía</h3>
+          <p class="testimonial">Una experiencia increíble en Tilcara!</p>
+        </div>
+        <div class="item">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1689977807477-a579eda91fa2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <h3 class="name">Facu</h3>
+          <p class="testimonial">Una experiencia increíble en Tilcara!</p>
+        </div>
       </div>
+    </section>
 
-      <div class="row mt-5">
-        <div class="col-12 text-center border-top pt-4" style="border-color: rgba(255,255,255,0.1) !important;">
+    <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row g-5 text-center text-lg-start">
+          <!-- NEWSLETTER -->
+          <div class="col-lg-4">
+            <h5 class="fw-bold mb-3">Suscríbete a nuestro Newsletter</h5>
+
+            <form class="d-flex flex-column flex-sm-row gap-2">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                required
+              />
+              <button class="btn btn-primary">Enviar</button>
+            </form>
+
+            <h5 class="fw-bold mt-4 mb-3">Redes Sociales</h5>
+            <div
+              class="d-flex justify-content-center justify-content-lg-start gap-3"
+            >
+              <a href="#" class="text-white fs-5"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white fs-5"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white fs-5"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white fs-5"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- LINKS -->
+          <div class="col-lg-4">
+            <h5 class="fw-bold mb-3">Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-white text-decoration-none">Contacto</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >Sobre Nosotros</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >Políticas</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- MAPA -->
+          <div class="col-lg-4">
+            <h5 class="fw-bold mb-3">Ubicación</h5>
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29335.355984855898!2d-65.37155270283667!3d-23.209604208719668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9404e9a4ba40a8c1%3A0x5ff8703d0479ecf9!2sHumahuaca%2C%20Jujuy!5e0!3m2!1ses-419!2sar!4v1775947113125!5m2!1ses-419!2sar"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="text-center border-top pt-4 mt-4">
           <p class="mb-0 text-white-50 small">© 2026 Jujuy Turismo</p>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="js/zenfit-modo.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-
-</body>
-
+    <script src="js/zenfit-modo.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
