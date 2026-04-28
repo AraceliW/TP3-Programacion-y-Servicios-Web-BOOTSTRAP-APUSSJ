@@ -94,10 +94,10 @@
 
 
   <section class="precios-section" id="id-section-precios">
- 
+
   <h2 class="section-heading">Paquetes y excursiones</h2>
   <p class="section-sub">Elegí el modo para ver precios y ahorros por grupo</p>
- 
+
   <!-- TOGGLE  -->
   <div class="toggle-wrap">
     <span class="toggle-label active" id="lbl-ind">Individual</span>
@@ -107,10 +107,10 @@
     </div>
     <span class="toggle-label" id="lbl-grp">Grupal</span>
   </div>
- 
+
   <!-- CARDS -->
   <div class="cards-grid">
- 
+
     <!-- ── Plan Escapada ── -->
     <div class="plan-card">
       <p class="plan-title">Escapada</p>
@@ -133,19 +133,17 @@
         <li>Guía local bilingüe</li>
         <li class="off">Sin alojamiento incluido</li>
       </ul>
- 
       <button class="btn-plan btn-outline-plan ">Reservar</button>
     </div>
- 
- 
-    <!-- ── Plan Aventura (recomendado / featured) ── -->
+
+    <!-- ── Plan Aventura ── -->
     <div class="plan-card featured">
       <span class="badge-pop">Más popular</span>
       <p class="plan-title">Aventura</p>
       <span class="plan-ahorro">Ahorrá 20% para grupos de 4</span>
       <p class="plan-price"
-         data-ind="AR$ 125.000"
-         data-grp="AR$ 400.000">AR$ 125.000</p>
+        data-ind="AR$ 125.000"
+        data-grp="AR$ 400.000">AR$ 125.000</p>
       <hr class="plan-divider">
       <ul class="plan-features">
         <li>
@@ -167,18 +165,17 @@
           </span>
         </li>
       </ul>
- 
       <button class="btn-plan btn-filled-plan">Reservar</button>
     </div>
- 
- 
+
+
     <!-- ── Plan Premium ── -->
     <div class="plan-card">
       <p class="plan-title">Premium</p>
       <span class="plan-ahorro">Ahorrá 25% para grupos de 4</span>
       <p class="plan-price"
-         data-ind="AR$ 250.000"
-         data-grp="AR$ 750.000">AR$ 250.000</p>
+        data-ind="AR$ 250.000"
+        data-grp="AR$ 750.000">AR$ 250.000</p>
       <hr class="plan-divider">
       <ul class="plan-features">
         <li>
@@ -207,12 +204,10 @@
           </span>
         </li>
       </ul>
- 
       <button class="btn-plan btn-outline-plan">Reservar</button>
     </div>
- 
-  </div><!-- /cards-grid -->
-</section>
+  </div>
+  </section>
 
 
   <footer class="footer-jujuy pt-5 pb-4">
@@ -275,8 +270,8 @@
   });
  
   /* ── 2. Toggle Individual / Grupal ──
-     Cada .plan-price tiene data-ind y data-grp.
-     jQuery los intercambia con un .each() sin duplicar nodos en el DOM. */
+    Cada .plan-price tiene data-ind y data-grp.
+    jQuery los intercambia con un .each() sin duplicar nodos en el DOM. */
   $('#tog').on('change', function () {
     var grupal = $(this).is(':checked');
  
