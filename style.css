@@ -16,8 +16,6 @@
   /* ══════════════════════════════
      PAG Precios
   ══════════════════════════════ */
-  * { box-sizing: border-box; }
-  body { background: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
  
   .precios-section {
     padding: clamp(1.5rem, 4vw, 3rem) clamp(.75rem, 3vw, 1.5rem);
@@ -121,14 +119,14 @@
     }
     /* La card featured mantiene su borde de color al hacer hover */
     .plan-card.featured:hover {
-      border-color: #7DF527;
+      border-color: #587133;
       box-shadow: 0 8px 28px rgba(13, 110, 253, .12);
     }
   }
  
   /* Card destacada (Aventura) */
   .plan-card.featured {
-    border: 2px solid #7DF527;
+    border: 2px solid #587133;
   }
  
  
@@ -241,9 +239,9 @@
   }
  
   .btn-outline-plan {
-    background: #7DF527;
+    background: #587133;
     border: 1px solid #ced4da;
-    color: #1a1a2e;
+    color: #e8e8ec;
   }
  
   .btn-outline-plan:hover {
@@ -252,9 +250,9 @@
   }
  
   .btn-filled-plan {
-    background: #7DF527;
+    background: #587133;
     border: none;
-    color: #000;
+    color: #e8e8ec;
   }
  
   .btn-filled-plan:hover { opacity: .85; }
@@ -270,11 +268,7 @@
 /* ══════════════════════════════
          PAG. Destinos
 ══════════════════════════════ */
-body {
-  background: #f8f9fa;
-  font-family: 'Segoe UI', sans-serif;
-}
- 
+
 .sec { padding: 2.5rem 1rem; }
 
 .sec#id-galeria {
@@ -330,18 +324,13 @@ body {
 }
  
 .btn-filtro-dest.activo {
-  background: #1a1a2e;
+  background: #587133;
   color: #fff;
-  border-color: #1a1a2e;
+  border-color: #587133;
 }
  
  
-/* ══════════════════════════════
-   GRID GALERÍA
-   Mobile:      1 columna  (<576px)
-   Tablet:      2 columnas (≥576px)
-   Desktop:     3 columnas (≥992px)
-══════════════════════════════ */
+/* GRID GALERÍA */
 .galeria-grid {
   display: grid;
   gap: .75rem;
@@ -406,13 +395,11 @@ body {
 .gal-item.oculto { display: none; }
  
  
-/* ══════════════════════════════
-   CARDS LUGARES DESTACADOS
-   Zoom en imagen con overflow hidden en wrapper
-══════════════════════════════ */
+/* CARDS LUGARES DESTACADOS
+   Zoom en imagen con overflow hidden en wrapper */
 .dest-card {
   background: #fff;
-  border: 1px solid #e9ecef;
+  border: 1px solid #587133;
   border-radius: 12px;
   overflow: hidden;
   height: 100%;
@@ -423,7 +410,7 @@ body {
  
 @media (hover: hover) {
   .dest-card:hover {
-    border-color: #adb5bd;
+    border-color: #587133;
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0,0,0,.07);
   }
@@ -470,8 +457,8 @@ body {
   padding: 5px 12px;
   border-radius: 6px;
   border: 1px solid #dee2e6;
-  background: transparent;
-  color: #495057;
+  background: #587133;
+  color: #cbd6dd;
   cursor: pointer;
   width: fit-content;
   margin-top: .5rem;
@@ -499,8 +486,8 @@ body {
 .tabla-wrap table { margin: 0; font-size: .8125rem; }
  
 .tabla-wrap thead th {
-  background: #f8f9fa;
-  color: #6c757d;
+  background: #587133;
+  color: #ffffff;
   font-weight: 600;
   font-size: .7rem;
   letter-spacing: .08em;
@@ -511,7 +498,7 @@ body {
  
 .tabla-wrap tbody td {
   padding: .65rem 1rem;
-  color: #1a1a2e;
+  color: #587133;
   border-color: #e9ecef !important;
   vertical-align: middle;
 }
@@ -532,7 +519,7 @@ body {
 .badge-gastro    { background: #fef9c3; color: #854d0e; }
 .badge-otro      { background: #f1f5f9; color: #475569; }
  
-/* ── Mobile stacked table (<576px) ── */
+/* ── tabla (<576px) ── */
 @media (max-width: 575px) {
   .tabla-wrap table thead { display: none; }
  
@@ -547,7 +534,7 @@ body {
   /* Muestra el nombre de columna antes del valor */
   .tabla-wrap table td::before {
     content: attr(data-label);
-    color: #adb5bd;
+    color: #587133;
     font-size: .7rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1142,164 +1129,6 @@ a,
 }
 
 
-/* Galeria */
-.galeria-section {
-  padding: 40px 5%;
-  background-color: var(--background);
-}
-
-.titulo {
-  color: black;
-}
-
-.sub-titulo {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: black;
-}
-
-.filtros {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-
-.filtros label {
-  border: 2px solid #6d814d;
-  background: white;
-  color: #333;
-  padding: 8px 20px;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#cultural:checked~.filtros label[for="cultural"],
-#naturaleza:checked~.filtros label[for="naturaleza"],
-#sol:checked~.filtros label[for="sol"],
-#gastro:checked~.filtros label[for="gastro"],
-#religioso:checked~.filtros label[for="religioso"] {
-  background: #d4e0c1;
-}
-
-
-.galeria-section {
-  padding: 3rem;
-  background-color: var(--cuarto-color);
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-.filtros {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-
-.filtros label {
-  border: 2px solid #6d814d;
-  background: white;
-  color: #333;
-  padding: 8px 20px;
-  border-radius: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-input:checked+label {
-  background: #d4e0c1;
-  border-color: #6d814d;
-}
-
-.galeria {
-  column-count: 4;
-  column-gap: 1.5rem;
-}
-
-.item {
-  width: 100%;
-  margin-bottom: 1.5rem;
-  display: block;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-img.item {
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-#cultural:checked~.galeria .item:not(.cultural),
-#naturaleza:checked~.galeria .item:not(.naturaleza),
-#sol:checked~.galeria .item:not(.sol),
-#gastro:checked~.galeria .item:not(.gastro),
-#religioso:checked~.galeria .item:not(.religioso) {
-  display: none;
-}
-
-#todo:checked~.galeria .item {
-  display: block;
-}
-
-@media (max-width: 1024px) {
-  .galeria {
-    column-count: 3;
-  }
-}
-
-@media (max-width: 768px) {
-  .galeria {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .galeria {
-    column-count: 1;
-  }
-}
-
-
-.section-table {
-  padding: 40px 20px;
-  background-color: var(--cuarto-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.table-container {
-  background-color: #8b5e3c;
-  /* El marrón de la tabla */
-  border-radius: 20px;
-  padding: 20px;
-  width: 100%;
-  max-width: 1000px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  color: white;
-}
-
-caption {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 30px;
-  color: white;
-}
 
 /* Encabezados */
 thead tr {
@@ -2073,8 +1902,3 @@ body.zenfit-light-mode {
     justify-content: center;
     align-items: center;
 }
-
-
-
-
-
