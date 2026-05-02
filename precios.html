@@ -1,293 +1,397 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JUJUY TURISMO</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JUJUY TURISMO</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top shadow-sm navbar-jujuy">
+        <div class="container container-jujuy">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img
+              id="logo-jujuy"
+              src="img/logo-jujuy-turismo.png"
+              alt="Logo Jujuy Turismo"
+              class="navbar-jujuy-logo"
+            />
+          </a>
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg fixed-top shadow-sm navbar-jujuy">
-      <div class="container container-jujuy">
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuNavegacion"
+            aria-controls="menuNavegacion"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img id="logo-jujuy" src="img/logo-jujuy-turismo.png" alt="Logo Jujuy Turismo" class="navbar-jujuy-logo">
-        </a>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="menuNavegacion"
+          >
+            <ul
+              class="navbar-nav align-items-lg-center gap-2 gap-lg-3 py-3 py-lg-0"
+            >
+              <li class="nav-item dropdown position-lg-static">
+                <a
+                  class="nav-link dropdown-toggle fw-bold nav-link-jujuy"
+                  href="#"
+                  id="destinosDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  DESTINOS
+                </a>
 
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion"
-          aria-controls="menuNavegacion" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
-          <ul class="navbar-nav align-items-lg-center gap-2 gap-lg-3 py-3 py-lg-0">
-
-            <li class="nav-item dropdown position-lg-static">
-              <a class="nav-link dropdown-toggle fw-bold nav-link-jujuy" href="#" id="destinosDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                DESTINOS
-              </a>
-
-              <div class="dropdown-menu w-100 mt-0 border-0 shadow pt-3 pb-4 px-4 dropdown-mega-jujuy"
-                aria-labelledby="destinosDropdown">
-                <div class="container">
-                  <div class="row g-4">
-                    <div class="col-lg-3 d-none d-lg-block">
-                      <div class="rounded w-100 img-mega-menu"></div>
-                    </div>
-                    <div class="col-lg-3">
-                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a class="text-decoration-none link-mega" href="destinos.html">Nuestros Destinos</a></li>
-                        <li><a class="text-decoration-none link-mega" href="educacion.html">Simulación de Phishing</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-lg-3">
-                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a class="text-decoration-none link-mega" href="destinos.html#id-section-table">Precios por
-                            Lugar</a></li>
-                        <li><a class="text-decoration-none link-mega" href="destinos.html#id-galeria">Galería</a></li>
-                      </ul>
-                    </div>
-                    <div class="col-lg-3">
-                      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a class="text-decoration-none link-mega" href="blog.html">Blog</a></li>
-                      </ul>
+                <div
+                  class="dropdown-menu w-100 mt-0 border-0 shadow pt-3 pb-4 px-4 dropdown-mega-jujuy"
+                  aria-labelledby="destinosDropdown"
+                >
+                  <div class="container">
+                    <div class="row g-4">
+                      <div class="col-lg-3 d-none d-lg-block">
+                        <div class="rounded w-100 img-mega-menu"></div>
+                      </div>
+                      <div class="col-lg-3">
+                        <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                          <li>
+                            <a
+                              class="text-decoration-none link-mega"
+                              href="destinos.html"
+                              >Nuestros Destinos</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              class="text-decoration-none link-mega"
+                              href="educacion.html"
+                              >Simulación de Phishing</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-lg-3">
+                        <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                          <li>
+                            <a
+                              class="text-decoration-none link-mega"
+                              href="destinos.html#id-section-table"
+                              >Precios por Lugar</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              class="text-decoration-none link-mega"
+                              href="destinos.html#id-galeria"
+                              >Galería</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-lg-3">
+                        <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                          <li>
+                            <a
+                              class="text-decoration-none link-mega"
+                              href="blog.html"
+                              >Blog</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link fw-bold nav-link-jujuy" href="agencias.html">AGENCIAS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-bold nav-link-jujuy" href="precios.html">PRECIOS</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold nav-link-jujuy" href="agencias.html"
+                  >AGENCIAS</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold nav-link-jujuy" href="precios.html"
+                  >PRECIOS</a
+                >
+              </li>
 
-            <li class="nav-item mt-2 mt-lg-0">
-              <a class="btn px-4 fw-bold text-white rounded-2 btn-reserva-jujuy" href="contacto.html">CONTACTO</a>
-            </li>
+              <li class="nav-item mt-2 mt-lg-0">
+                <a
+                  class="btn px-4 fw-bold text-white rounded-2 btn-reserva-jujuy"
+                  href="contacto.html"
+                  >CONTACTO</a
+                >
+              </li>
 
-            <li class="nav-item mt-2 mt-lg-0 d-flex align-items-center">
-              <button id="zenfit-toggle-mode" aria-label="Cambiar modo" class="btn border-0 fs-5 p-0 ms-lg-2"
-                style="color: var(--text-color);">
-                <i id="icono-modo" class="bi bi-brightness-high-fill"></i>
-              </button>
-            </li>
+              <li class="nav-item mt-2 mt-lg-0 d-flex align-items-center">
+                <button
+                  id="zenfit-toggle-mode"
+                  aria-label="Cambiar modo"
+                  class="btn border-0 fs-5 p-0 ms-lg-2"
+                  style="color: var(--text-color)"
+                >
+                  <i id="icono-modo" class="bi bi-brightness-high-fill"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
+    <section class="precios-section" id="id-section-precios">
+      <h2 class="section-heading">Paquetes y excursiones</h2>
+      <p class="section-sub">
+        Elegí el modo para ver precios y ahorros por grupo
+      </p>
+
+      <!-- TOGGLE  -->
+      <div class="toggle-wrap">
+        <span class="toggle-label active" id="lbl-ind">Individual</span>
+        <div class="form-check form-switch m-0 p-0">
+          <input
+            class="form-check-input t-switch ms-0"
+            type="checkbox"
+            id="tog"
+            role="switch"
+          />
+        </div>
+        <span class="toggle-label" id="lbl-grp">Grupal</span>
+      </div>
+
+      <!-- CARDS -->
+      <div class="cards-grid">
+        <!-- ── Plan Escapada ── -->
+        <div class="plan-card">
+          <p class="plan-title">Escapada</p>
+          <span class="plan-ahorro">Ahorrá 15% para grupos de 4</span>
+          <!-- data-ind / data-grp: jQuery los intercambia al togglear -->
+          <p class="plan-price" data-ind="AR$ 70.000" data-grp="AR$ 238.000">
+            AR$ 70.000
+          </p>
+          <hr class="plan-divider" />
+          <ul class="plan-features">
+            <li>
+              <span
+                class="has-tip"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Recorrido por casco histórico y centros culturales"
+              >
+                City tour Jujuy
+              </span>
+            </li>
+            <li>Transporte a Purmamarca</li>
+            <li>Guía local bilingüe</li>
+            <li class="off">Sin alojamiento incluido</li>
           </ul>
+          <button class="btn-plan btn-outline-plan">Reservar</button>
+        </div>
+
+        <!-- ── Plan Aventura ── -->
+        <div class="plan-card featured">
+          <span class="badge-pop">Más popular</span>
+          <p class="plan-title">Aventura</p>
+          <span class="plan-ahorro">Ahorrá 20% para grupos de 4</span>
+          <p class="plan-price" data-ind="AR$ 125.000" data-grp="AR$ 400.000">
+            AR$ 125.000
+          </p>
+          <hr class="plan-divider" />
+          <ul class="plan-features">
+            <li>
+              <span
+                class="has-tip"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Incluye Cuesta de Lipán y visita a los piletones"
+              >
+                Full Salinas Grandes
+              </span>
+            </li>
+            <li>Tilcara y Pucará</li>
+            <li>Almuerzo regional incluido</li>
+            <li>
+              <span
+                class="has-tip"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Búsqueda por hotel o punto de encuentro"
+              >
+                Traslado privado
+              </span>
+            </li>
+          </ul>
+          <button class="btn-plan btn-filled-plan">Reservar</button>
+        </div>
+
+        <!-- ── Plan Premium ── -->
+        <div class="plan-card">
+          <p class="plan-title">Premium</p>
+          <span class="plan-ahorro">Ahorrá 25% para grupos de 4</span>
+          <p class="plan-price" data-ind="AR$ 250.000" data-grp="AR$ 750.000">
+            AR$ 250.000
+          </p>
+          <hr class="plan-divider" />
+          <ul class="plan-features">
+            <li>
+              <span
+                class="has-tip"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Excursión exclusiva al Hornocal (Humahuaca)"
+              >
+                Vuelo de los 7 colores
+              </span>
+            </li>
+            <li>Alojamiento boutique</li>
+            <li>
+              <span
+                class="has-tip"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Todas las comidas y bebidas regionales incluidas"
+              >
+                All inclusive
+              </span>
+            </li>
+            <li>
+              <span
+                class="has-tip"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Camioneta 4x4 a disposición las 24 hs"
+              >
+                Chofer exclusivo
+              </span>
+            </li>
+          </ul>
+          <button class="btn-plan btn-outline-plan">Reservar</button>
         </div>
       </div>
-    </nav>
-  </header>
+    </section>
 
+    <footer class="footer-jujuy pt-5 pb-4">
+      <div class="container">
+        <div class="row g-5 text-center text-lg-start">
+          <div class="col-lg-4">
+            <h3 class="footer-title-jujuy">Suscríbete a nuestro Newsletter</h3>
+            <form action="#" class="newsletter-form-jujuy mx-auto mx-lg-0">
+              <input type="email" placeholder="Email" required />
+              <button type="submit">Enviar</button>
+            </form>
 
-  <section class="precios-section" id="id-section-precios">
+            <h3 class="footer-title-jujuy mt-4">Enlaces a redes sociales</h3>
+            <div
+              class="social-jujuy d-flex justify-content-center justify-content-lg-start gap-2"
+            >
+              <a href="https://www.facebook.com/?locale=es_LA" target="_blank"
+                ><span class="fab fa-facebook-f"></span
+              ></a>
+              <a href="https://www.instagram.com/?hl=es" target="_blank"
+                ><span class="fab fa-instagram"></span
+              ></a>
+              <a href="https://x.com/?lang=es" target="_blank"
+                ><span class="fab fa-twitter"></span
+              ></a>
+              <a href="https://www.youtube.com/" target="_blank"
+                ><span class="fab fa-youtube"></span
+              ></a>
+            </div>
+          </div>
 
-  <h2 class="section-heading">Paquetes y excursiones</h2>
-  <p class="section-sub">Elegí el modo para ver precios y ahorros por grupo</p>
+          <div class="col-lg-4">
+            <h3 class="footer-title-jujuy">Links</h3>
+            <ul class="list-unstyled footer-links-jujuy">
+              <li><a href="#">Contacto</a></li>
+              <li><a href="#">Sobre Nosotros</a></li>
+              <li><a href="#">Políticas</a></li>
+            </ul>
+          </div>
 
-  <!-- TOGGLE  -->
-  <div class="toggle-wrap">
-    <span class="toggle-label active" id="lbl-ind">Individual</span>
-    <div class="form-check form-switch m-0 p-0">
-      <input class="form-check-input t-switch ms-0"
-        type="checkbox" id="tog" role="switch">
-    </div>
-    <span class="toggle-label" id="lbl-grp">Grupal</span>
-  </div>
-
-  <!-- CARDS -->
-  <div class="cards-grid">
-
-    <!-- ── Plan Escapada ── -->
-    <div class="plan-card">
-      <p class="plan-title">Escapada</p>
-      <span class="plan-ahorro">Ahorrá 15% para grupos de 4</span>
-      <!-- data-ind / data-grp: jQuery los intercambia al togglear -->
-      <p class="plan-price"
-        data-ind="AR$ 70.000"
-        data-grp="AR$ 238.000">AR$ 70.000</p>
-      <hr class="plan-divider">
-      <ul class="plan-features">
-        <li>
-          <span class="has-tip"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title="Recorrido por casco histórico y centros culturales">
-            City tour Jujuy
-          </span>
-        </li>
-        <li>Transporte a Purmamarca</li>
-        <li>Guía local bilingüe</li>
-        <li class="off">Sin alojamiento incluido</li>
-      </ul>
-      <button class="btn-plan btn-outline-plan ">Reservar</button>
-    </div>
-
-    <!-- ── Plan Aventura ── -->
-    <div class="plan-card featured">
-      <span class="badge-pop">Más popular</span>
-      <p class="plan-title">Aventura</p>
-      <span class="plan-ahorro">Ahorrá 20% para grupos de 4</span>
-      <p class="plan-price"
-        data-ind="AR$ 125.000"
-        data-grp="AR$ 400.000">AR$ 125.000</p>
-      <hr class="plan-divider">
-      <ul class="plan-features">
-        <li>
-          <span class="has-tip"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title="Incluye Cuesta de Lipán y visita a los piletones">
-            Full Salinas Grandes
-          </span>
-        </li>
-        <li>Tilcara y Pucará</li>
-        <li>Almuerzo regional incluido</li>
-        <li>
-          <span class="has-tip"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title="Búsqueda por hotel o punto de encuentro">
-            Traslado privado
-          </span>
-        </li>
-      </ul>
-      <button class="btn-plan btn-filled-plan">Reservar</button>
-    </div>
-
-
-    <!-- ── Plan Premium ── -->
-    <div class="plan-card">
-      <p class="plan-title">Premium</p>
-      <span class="plan-ahorro">Ahorrá 25% para grupos de 4</span>
-      <p class="plan-price"
-        data-ind="AR$ 250.000"
-        data-grp="AR$ 750.000">AR$ 250.000</p>
-      <hr class="plan-divider">
-      <ul class="plan-features">
-        <li>
-          <span class="has-tip"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title="Excursión exclusiva al Hornocal (Humahuaca)">
-            Vuelo de los 7 colores
-          </span>
-        </li>
-        <li>Alojamiento boutique</li>
-        <li>
-          <span class="has-tip"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title="Todas las comidas y bebidas regionales incluidas">
-            All inclusive
-          </span>
-        </li>
-        <li>
-          <span class="has-tip"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title="Camioneta 4x4 a disposición las 24 hs">
-            Chofer exclusivo
-          </span>
-        </li>
-      </ul>
-      <button class="btn-plan btn-outline-plan">Reservar</button>
-    </div>
-  </div>
-  </section>
-
-
-  <footer class="footer-jujuy pt-5 pb-4">
-    <div class="container">
-      <div class="row g-5 text-center text-lg-start">
-
-        <div class="col-lg-4">
-          <h3 class="footer-title-jujuy">Suscríbete a nuestro Newsletter</h3>
-          <form action="#" class="newsletter-form-jujuy mx-auto mx-lg-0">
-            <input type="email" placeholder="Email" required>
-            <button type="submit">Enviar</button>
-          </form>
-
-          <h3 class="footer-title-jujuy mt-4">Enlaces a redes sociales</h3>
-          <div class="social-jujuy d-flex justify-content-center justify-content-lg-start gap-2">
-            <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><span class="fab fa-facebook-f"></span></a>
-            <a href="https://www.instagram.com/?hl=es" target="_blank"><span class="fab fa-instagram"></span></a>
-            <a href="https://x.com/?lang=es" target="_blank"><span class="fab fa-twitter"></span></a>
-            <a href="https://www.youtube.com/" target="_blank"><span class="fab fa-youtube"></span></a>
+          <div class="col-lg-4">
+            <h3 class="footer-title-jujuy">Mapa interactivo embebido</h3>
+            <div class="mapa-jujuy">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29335.355984855898!2d-65.37155270283667!3d-23.209604208719668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9404e9a4ba40a8c1%3A0x5ff8703d0479ecf9!2sHumahuaca%2C%20Jujuy!5e0!3m2!1ses-419!2sar!4v1775947113125!5m2!1ses-419!2sar"
+                width="100%"
+                height="150"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
 
-        <div class="col-lg-4">
-          <h3 class="footer-title-jujuy">Links</h3>
-          <ul class="list-unstyled footer-links-jujuy">
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">Sobre Nosotros</a></li>
-            <li><a href="#">Políticas</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4">
-          <h3 class="footer-title-jujuy">Mapa interactivo embebido</h3>
-          <div class="mapa-jujuy">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29335.355984855898!2d-65.37155270283667!3d-23.209604208719668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9404e9a4ba40a8c1%3A0x5ff8703d0479ecf9!2sHumahuaca%2C%20Jujuy!5e0!3m2!1ses-419!2sar!4v1775947113125!5m2!1ses-419!2sar"
-              width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="row mt-5">
+          <div
+            class="col-12 text-center border-top pt-4"
+            style="border-color: rgba(255, 255, 255, 0.1) !important"
+          >
+            <p class="mb-0 text-white-50 small">© 2026 Jujuy Turismo</p>
           </div>
         </div>
-
       </div>
+    </footer>
 
-      <div class="row mt-5">
-        <div class="col-12 text-center border-top pt-4" style="border-color: rgba(255,255,255,0.1) !important;">
-          <p class="mb-0 text-white-50 small">© 2026 Jujuy Turismo</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <script src="js/zenfit-modo.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+      $(function () {
+        /* ── 1. Inicializar tooltips Bootstrap ── */
+        document
+          .querySelectorAll('[data-bs-toggle="tooltip"]')
+          .forEach(function (el) {
+            new bootstrap.Tooltip(el, { trigger: "hover focus" });
+          });
 
-  <script src="js/zenfit-modo.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-  <script>
-    $(function () {
- 
-  /* ── 1. Inicializar tooltips Bootstrap ── */
-  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function (el) {
-    new bootstrap.Tooltip(el, { trigger: 'hover focus' });
-  });
- 
-  /* ── 2. Toggle Individual / Grupal ──
+        /* ── 2. Toggle Individual / Grupal ──
     Cada .plan-price tiene data-ind y data-grp.
     jQuery los intercambia con un .each() sin duplicar nodos en el DOM. */
-  $('#tog').on('change', function () {
-    var grupal = $(this).is(':checked');
- 
-    /* Actualizar labels activos */
-    $('#lbl-ind').toggleClass('active', !grupal);
-    $('#lbl-grp').toggleClass('active',  grupal);
- 
-    /* Actualizar precios */
-    $('.plan-price').each(function () {
-      var $el = $(this);
-      $el.text(grupal ? $el.data('grp') : $el.data('ind'));
-    });
-  });
- 
-});
-  </script>
-</body>
+        $("#tog").on("change", function () {
+          var grupal = $(this).is(":checked");
 
+          /* Actualizar labels activos */
+          $("#lbl-ind").toggleClass("active", !grupal);
+          $("#lbl-grp").toggleClass("active", grupal);
+
+          /* Actualizar precios */
+          $(".plan-price").each(function () {
+            var $el = $(this);
+            $el.text(grupal ? $el.data("grp") : $el.data("ind"));
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
